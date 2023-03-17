@@ -44,4 +44,12 @@ public class AdminView {
 
         }
     }
+
+    /**
+     * 积分累计
+     */
+    public void addPoints(){
+        System.out.println("请输入会员卡号");
+        int cid=InputUtil.getInt();
+    }
 }

@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd004b15-42d5-4985-a58c-ea09c4df4c2b" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/sc/view/AdminView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sc/view/VipView.java" afterDir="false" />
+    <list default="true" id="dd004b15-42d5-4985-a58c-ea09c4df4c2b" name="变更" comment="添加会员和管理员界面">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sc/view/AdminView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/view/AdminView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +21,8 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -125,11 +124,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -206,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679033802125</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加会员和管理员界面">
+      <created>1679038265818</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679038265818</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -261,7 +267,8 @@
     <MESSAGE value="add message.." />
     <MESSAGE value="商品PO" />
     <MESSAGE value="1" />
-    <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <MESSAGE value="添加会员和管理员界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加会员和管理员界面" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
