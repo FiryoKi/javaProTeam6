@@ -18,8 +18,8 @@ public class VipCardDao {
 	
 		 conn=DBConnection.getConnection();
 		 ps=conn.prepareStatement(sql);
-		//4.��ֵ
-		//5.ִ�У��õ������
+		//4.赋值
+		//5.ִ执行
 		ps.setString(1, vip.getName());
 		ps.setString(2, vip.getPassword());
 		
@@ -50,19 +50,19 @@ while(rs.next()) {
 			Connection conn=null;
 			PreparedStatement ps=null;
 			try {
-				//1.sql���
+				//1.sql语句
 				String sql="update vipcard set password=? where name=?";
-				//2.���ݿ����Ӷ���
+				//2.获取数据库连接对象
 				conn=DBConnection.getConnection();
-				//3.Ԥ�������
+				//3.预编译
 				ps = conn.prepareStatement(sql);
-				//4.��ֵ
-				System.out.println("�����������û�����");
+				//4.赋值
+				System.out.println("请输入用户名：");
 				String name=InputUtil.getString();
 				ps.setString(2, name);
 				ps.setString(1, v.getPassword());
 				
-				//5.ִ�У��õ����
+				//5.ִ执行
 				i=ps.executeUpdate();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
