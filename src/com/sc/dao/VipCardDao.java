@@ -1,6 +1,8 @@
 package com.sc.dao;
 
 import com.sc.po.VipCard;
+import com.sc.util.DBConnection;
+import com.sc.util.InputUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -53,12 +55,12 @@ while(rs.next()) {
 				//1.sql语句
 				String sql="update vipcard set password=? where name=?";
 				//2.获取数据库连接对象
-				conn=DBConnection.getConnection();
+				conn= DBConnection.getConnection();
 				//3.预编译
 				ps = conn.prepareStatement(sql);
 				//4.赋值
 				System.out.println("请输入用户名：");
-				String name=InputUtil.getString();
+				String name= InputUtil.getString();
 				ps.setString(2, name);
 				ps.setString(1, v.getPassword());
 				

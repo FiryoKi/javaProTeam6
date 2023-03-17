@@ -1,6 +1,7 @@
 package com.sc.dao;
 
 import com.sc.po.Good;
+import com.sc.util.DBConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
