@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8232a0c-bbe7-4ab0-a82c-f4924fb34489" name="Changes" comment="商品PO" />
+    <list default="true" id="c8232a0c-bbe7-4ab0-a82c-f4924fb34489" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +39,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "CodeWithMe",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -51,7 +51,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679018642452</updated>
-      <workItem from="1679018644284" duration="2319000" />
+      <workItem from="1679018644284" duration="2960000" />
     </task>
     <task id="LOCAL-00001" summary="add message..">
       <created>1679019539058</created>
@@ -60,7 +60,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679019539058</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="商品PO">
+      <created>1679021201331</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679021201331</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -70,7 +77,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="add message.." />
-    <option name="LAST_COMMIT_MESSAGE" value="add message.." />
+    <MESSAGE value="商品PO" />
+    <option name="LAST_COMMIT_MESSAGE" value="商品PO" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
