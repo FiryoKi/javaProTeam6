@@ -29,13 +29,8 @@ public class AdminService {
         }
     }
 
-    public Boolean allVip() {
+    public void allVip() {
         System.out.println(vipCardDao.selectAllVip());
-        if (i > 0) {
-            return true;
-        } else {
-            return false;
-        }
     }
 
 }

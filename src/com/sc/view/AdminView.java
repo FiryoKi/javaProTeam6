@@ -72,11 +72,7 @@ public class AdminView {
      */
     public void selectAllVip() {
         System.out.println("会员信息：");
-        Boolean i = adminService.allVip();
-        if (i) {
-            System.out.println("查询成功");
-        } else {
-            System.out.println("查询失败");
-        }
+        adminService.allVip();
+
     }
 }
