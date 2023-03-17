@@ -31,6 +31,7 @@ public class GoodDao {
                 g.setGid(rs.getInt(1));
                 g.setGoodName(rs.getString(2));
                 g.setNeedPoint(rs.getInt(3));
+                g.setNumber(rs.getInt(4));
                 good.add(g);
             }
         } catch (SQLException e) {
@@ -41,6 +42,63 @@ public class GoodDao {
         }
         return good;
 
+    }
+    //查看要兑换物品是否在其中
+    public Good Exchange(Good good) {
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        //用来存储数据库查询结果的
+        Good g=new Good();
+        try {
+            //1.sql语句
+            String sql="select * from Good where GoodName=?";
+            //2.预编译sql语句
+            //获取数据库连接对象
+            conn=DBConnection.getConnection();
+            //预编译对象
+            ps=conn.prepareStatement(sql);
+            //给?赋值
+            ps.setString(1, good.getGoodName());
+            //执行并得到结果集
+            rs=ps.executeQuery();
+            while(rs.next()) {
+                g.setGid(rs.getInt(1));
+                g.setGoodName(rs.getString(2));
+                g.setNeedPoint(rs.getInt(3));
+                g.setNumber(rs.getInt(4));
+
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            DBConnection.closeAll(conn,ps,rs);
+        }
+        return g;
+
+    }
+    //兑换成功后修改数据库中数目
+    public int updateNumber(String GoodName,int Number){
+        int i=0;
+        Connection conn=null;
+        PreparedStatement ps =null;
+        try {
+            String sql="update Good set Number=? where GoodName=? ";
+            //数据库连接
+            conn=DBConnection.getConnection();
+            //预编译
+            ps= conn.prepareStatement(sql);
+            ps.setInt(1, Number);
+            ps.setString(2, GoodName);
+            i=ps.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally{
+            DBConnection.closeAll(conn, ps, null);
+        }
+        return i;
     }
     //管理员增加能够兑换的商品
     public int add(Good g) {
