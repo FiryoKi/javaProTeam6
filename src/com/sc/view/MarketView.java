@@ -11,52 +11,38 @@ public class MarketView {
 
 
     public static void main(String[] args) {
-        while(true) {
-            System.out.println("请选择：1.查询并兑换可兑换物品\t2.新增可兑换商品\t3.删除可兑换商品\t4.修改可兑换商品\t5.返回主页面");
-            System.out.println("请输入你要操作的选项：");
-            int i = InputUtil.getInt();
-            switch (i) {
-                case 1:
-                    selectAll();
-                    System.out.println("请选择你想兑换的物品：");
-                    String GoodName = InputUtil.getString();
-                    System.out.println("请选择要兑换的数目：");
-                    int Number=InputUtil.getInt();
-                    Good g = new Good();
-                    g.setGoodName(GoodName);
-                    Good good = gs.Exchange(g);
-                    if (good != null && GoodName.equals(good.getGoodName()) && good.getNumber()>=Number) {
-                        System.out.println("兑换成功！");
-                        Number -= good.getNumber();
-                        good.setGoodName(GoodName);
-                        good.setNumber(Number);
-                        boolean flag = gs.updateNumber(GoodName, Number);
-                    } else {
-                        System.out.println("兑换失败");
-                    }
-                    break;
-                case 2:
-                    selectAll();
-                    add();
-                    break;
-                case 3:
-                    selectAll();
-                    delete();
-                    break;
-                case 4:
-                    selectAll();
-                    update();
-                    break;
-                case 5:
-                    break;
-                default:
-                    System.out.println("没有该选项，请重新选择！！");
-                    break;
 
-            }
+        System.out.println("请选择：1.查询并兑换可兑换物品\t2.新增可兑换商品\t3.删除可兑换商品\t4.修改可兑换商品\t5.返回主页面");
+        System.out.println("请输入你要操作的选项：");
+        int i=InputUtil.getInt();
+        switch(i) {
+            case 1:
+                selectAll();
+                System.out.println("请选择你想兑换的物品：");
+                String Gname=InputUtil.getString();
+                System.out.println("兑换成功！");
+
+                break;
+            case 2:
+                selectAll();
+                add();
+                break;
+            case 3:
+                selectAll();
+                delete();
+                break;
+            case 4:
+                selectAll();
+                update();
+                break;
+            case 5:
+                break;
+            default:
+                System.out.println("没有该选项，请重新选择！！");
+                break;
+
         }
     }
-
 static GoodService gs=new GoodService();
 //查询所有
 public static void selectAll() {
@@ -106,7 +92,7 @@ public static void delete() {
         int Gid=InputUtil.getInt();
         boolean flag=gs.delete(Gid);
         if(flag) {
-        System.out.println("删除成功！");
+        System.out.println("更新成功！");
         }
 
     }
