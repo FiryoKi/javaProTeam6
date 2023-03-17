@@ -1,6 +1,8 @@
 package com.sc.dao;
 
 import com.sc.po.VipCard;
+import com.sc.util.DBConnection;
+import com.sc.util.InputUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,10 +18,8 @@ public class VipCardDao {
 		try{
 			String sql="select * from vipcard where name=? and password=?";
 	
-		 conn=DBConnection.getConnection();
+		 conn= DBConnection.getConnection();
 		 ps=conn.prepareStatement(sql);
-		//4.赋值
-		//5.ִ执行
 		ps.setString(1, vip.getName());
 		ps.setString(2, vip.getPassword());
 		
@@ -50,19 +50,19 @@ while(rs.next()) {
 			Connection conn=null;
 			PreparedStatement ps=null;
 			try {
-				//1.sql语句
+				//1.sql���
 				String sql="update vipcard set password=? where name=?";
-				//2.获取数据库连接对象
+				//2.���ݿ����Ӷ���
 				conn=DBConnection.getConnection();
-				//3.预编译
+				//3.Ԥ�������
 				ps = conn.prepareStatement(sql);
-				//4.赋值
-				System.out.println("请输入用户名：");
-				String name=InputUtil.getString();
+				//4.��ֵ
+				System.out.println("请输入您的用户名：");
+				String name= InputUtil.getString();
 				ps.setString(2, name);
 				ps.setString(1, v.getPassword());
 				
-				//5.ִ执行
+
 				i=ps.executeUpdate();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
