@@ -19,9 +19,8 @@ public class VipCardDao {
 		VipCard v= new VipCard();
 		try{
 			String sql="select * from vipcard where name=? and password=?";
-	
-		 conn=DBConnection.getConnection();
-		 ps=conn.prepareStatement(sql);
+		    conn=DBConnection.getConnection();
+		    ps=conn.prepareStatement(sql);
 		//4.赋值
 		//5.ִ执行
 		ps.setString(1, vip.getName());
@@ -31,10 +30,10 @@ public class VipCardDao {
 		 rs=ps.executeQuery();
 while(rs.next()) {
 	
-	v.setCid(rs.getInt(1));
-	v.setName(rs.getString(2));
-	v.setPassword(rs.getString(3));
-	v.setPoint(rs.getInt(5));
+	    v.setCid(rs.getInt(1));
+		v.setName(rs.getString(2));
+	    v.setPassword(rs.getString(3));
+	    v.setPoint(rs.getInt(5));
 		v.setCdate(rs.getString(6));
 		v.setCard(rs.getString(4));
 		v.setPid(rs.getInt(7));
