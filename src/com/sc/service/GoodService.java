@@ -16,6 +16,24 @@ public class GoodService {
             return null;
         }
     }
+    //兑换
+    public Good Exchange(Good good) {
+        Good g=gd.Exchange(good);
+        if(g!=null) {
+            return g;
+        }else {
+            return null;
+        }
+    }
+    //修改兑换商品数量
+    public boolean updateNumber(String GoodName,int Number) {
+        int i= gd.updateNumber(GoodName,Number);
+        if(i>0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
     //新增
     public boolean add(Good g) {
         int i=gd.add(g);
