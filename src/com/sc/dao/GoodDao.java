@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import com.sc.util.DBConnection;
 
 public class GoodDao {
     //会员或管理员查询有哪些可以兑换的东西
