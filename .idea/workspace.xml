@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c8232a0c-bbe7-4ab0-a82c-f4924fb34489" name="Changes" comment="Changes">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mysql-connector-java-8.0.16.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javaProTeam6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/javaProTeam6.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sc/dao/GoodDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/dao/GoodDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sc/service/GoodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/service/GoodService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sc/util/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/util/DBConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sc/view/MarketView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/view/MarketView.java" afterDir="false" />
-    </list>
+    <list default="true" id="c8232a0c-bbe7-4ab0-a82c-f4924fb34489" name="Changes" comment="Changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,13 +121,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/小贾/Desktop/javaProTeam6",
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/小贾/Desktop/javaProTeam6&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\小贾\Desktop\javaProTeam6" />
