@@ -1,10 +1,12 @@
 package com.sc.view;
 
+import com.sc.dao.VipCardDao;
 import com.sc.util.InputUtil;
 /**
  * 管理员界面
  */
 public class AdminView {
+    VipCardDao vipCardDao=new VipCardDao();
     public void adminView(){
         System.out.println("管理界面");
         System.out.println("请选择：" +
@@ -50,6 +52,15 @@ public class AdminView {
      */
     public void addPoints(){
         System.out.println("请输入会员卡号");
-        int cid=InputUtil.getInt();
+        String card=InputUtil.getString();
+        System.out.println("请输入添加的积分");
+        int points=InputUtil.getInt();
+        vipCardDao.addPoints(card, points);
+    }
+    /**
+     * 查看所有会员信息
+     */
+    public void selectAllVip(){
+
     }
 }
