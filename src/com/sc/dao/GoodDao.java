@@ -18,8 +18,11 @@ public class GoodDao {
         ResultSet rs=null;
         try {
             String sql="select * from Good";
+            //获取连接
             conn=DBConnection.getConnection();
+            //预编译sql语句
             ps=conn.prepareStatement(sql);
+            //获取结果集
             rs=ps.executeQuery();
             while(rs.next()) {
                 Good g=new Good();
