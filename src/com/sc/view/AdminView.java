@@ -1,13 +1,16 @@
 package com.sc.view;
 
-import com.sc.dao.VipCardDao;
+
+import com.sc.service.AdminService;
 import com.sc.util.InputUtil;
+
 /**
  * 管理员界面
  */
 public class AdminView {
-    VipCardDao vipCardDao=new VipCardDao();
-    public void adminView(){
+    AdminService adminService = new AdminService();
+
+    public void adminView() {
         System.out.println("管理界面");
         System.out.println("请选择：" +
                 "1.注册开卡" +
@@ -18,8 +21,8 @@ public class AdminView {
                 "6.管理积分兑换商品" +
                 "7.退出");
         System.out.println("请输入你要操作的选项：");
-        int i= InputUtil.getInt();
-        switch(i) {
+        int i = InputUtil.getInt();
+        switch (i) {
             case 1:
                 break;
             case 2:
@@ -50,17 +53,30 @@ public class AdminView {
     /**
      * 积分累计
      */
-    public void addPoints(){
+    public void addPoints() {
         System.out.println("请输入会员卡号");
-        String card=InputUtil.getString();
+        String card = InputUtil.getString();
         System.out.println("请输入添加的积分");
-        int points=InputUtil.getInt();
-        vipCardDao.addPoints(card, points);
+        int points = InputUtil.getInt();
+
+        Boolean i = adminService.addPoints(card, points);
+        if (i) {
+            System.out.println("添加成功");
+        } else {
+            System.out.println("添加失败");
+        }
     }
+
     /**
      * 查看所有会员信息
      */
-    public void selectAllVip(){
-
+    public void selectAllVip() {
+        System.out.println("会员信息：");
+        Boolean i = adminService.allVip();
+        if (i) {
+            System.out.println("查询成功");
+        } else {
+            System.out.println("查询失败");
+        }
     }
 }
