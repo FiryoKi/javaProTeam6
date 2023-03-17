@@ -19,9 +19,21 @@ public class MarketView {
             case 1:
                 selectAll();
                 System.out.println("请选择你想兑换的物品：");
-                String Gname=InputUtil.getString();
-                System.out.println("兑换成功！");
-
+                String GoodName = InputUtil.getString();
+                System.out.println("请选择要兑换的数目：");
+                int Number=InputUtil.getInt();
+                Good g = new Good();
+                g.setGoodName(GoodName);
+                Good good = gs.Exchange(g);
+                if (good != null && GoodName.equals(good.getGoodName()) && good.getNumber()>=Number) {
+                    System.out.println("兑换成功！");
+                    Number -= good.getNumber();
+                    good.setGoodName(GoodName);
+                    good.setNumber(Number);
+                    boolean flag = gs.updateNumber(GoodName, Number);
+                } else {
+                    System.out.println("兑换失败");
+                }
                 break;
             case 2:
                 selectAll();
