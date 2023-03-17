@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import com.sc.util.DBConnection;
+import com.sc.util.InputUtil;
 
 public class VipCardDao {
     public VipCard login(VipCard vip) {
