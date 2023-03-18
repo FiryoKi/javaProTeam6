@@ -19,8 +19,8 @@ public class AdminDao {
         try{
             conn = DBConnection.getConnection();
             ps = conn.prepareStatement(sql);
-            ps.setString(1,a.getAdmin());
-            ps.setString(2,a.getPassword());
+            ps.setString(1,admin.getAdmin());
+            ps.setString(2,admin.getPassword());
             rs = ps.executeQuery();
 
             while(rs.next()){
