@@ -11,7 +11,7 @@ import java.util.List;
 //管理员登录方法
 public class AdminDao {
     public Admin Login(Admin admin){
-        String sql = "select*from user where Admin=? and Password =?";
+        String sql = "select*from admin where Admin=? and Password =?";
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs =null;

@@ -30,7 +30,9 @@ public class AdminService {
     }
 
     public Boolean allVip() {
+
         System.out.println(vipCardDao.selectAllVip());
+        return false;
     }
 
 }
