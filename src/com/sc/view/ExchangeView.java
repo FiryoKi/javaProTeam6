@@ -30,7 +30,7 @@ public class ExchangeView {
                 int Number = InputUtil.getInt();
                 VipCard v = new VipCard();
                 v.setCard(card);
-                int points = vs.selecPointsByCard(card);
+                int points = vs.selectPointsByCard(card);
                 Good g = new Good();
                 g.setGoodName(GoodName);
                 Good good = gs.Exchange(g);
@@ -84,7 +84,7 @@ public class ExchangeView {
                 int Number = InputUtil.getInt();
                 VipCard v = new VipCard();
                 v.setCard(card);
-                int points = vs.selecPointsByCard(card);
+                int points = vs.selectPointsByCard(card);
                 Good g = new Good();
                 g.setGoodName(GoodName);
                 Good good = gs.Exchange(g);

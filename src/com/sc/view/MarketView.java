@@ -21,11 +21,9 @@ public class MarketView {
                 Admin a = new Admin();
                 AdminView adminView = new AdminView();
                 boolean f1 = loginView1.AdminLogin(a);
-
-                while (f1&&(adminView.getJ()==1)) {
+                if(f1) {
                     adminView.adminView();
                 }
-
             }
             //会员登录-跳转会员管理页面
             if (op1 == 2) {
@@ -33,8 +31,8 @@ public class MarketView {
                 VipView vipView = new VipView();
                 VipCard v = new VipCard();
                 boolean f2 = loginView2.VipLogin(v);
-                while (f2&&(vipView.getJ()==1)){
-                    vipView.VipView();
+                if(f2){
+                    vipView.VipView(v);
                 }
             }
             if(op1==0){

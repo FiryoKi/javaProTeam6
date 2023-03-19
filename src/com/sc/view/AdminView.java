@@ -23,7 +23,7 @@ public class AdminView {
     }
 
     public void adminView() {
-        while (j==1){
+        while (true){
             System.out.println("管理界面");
             System.out.println("请选择：" +
                     "1.注册开卡\t" +
@@ -55,8 +55,7 @@ public class AdminView {
                     exchangeView.AdminExchange();
                     break;
                 case 7:
-                    j=999;
-                    continue;
+                    return;
                 default:
                     System.out.println("没有该选项，请重新选择！！");
                     break;

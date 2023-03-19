@@ -11,12 +11,14 @@ import com.sc.util.InputUtil;
 public class VipView {
     VipCardService vcs = new VipCardService();
     int j = 1;
+
     public int getJ() {
         return j;
     }
+
     public void VipView(VipCard vipCard) {
-        while (j == 1) {
-            System.out.println("会员界面");
+        System.out.println("会员界面");
+        while (true) {
             System.out.println("请选择：" +
                     "1.兑换商品\t" +
                     "2.查询剩余积分\t" +
@@ -35,10 +37,9 @@ public class VipView {
                 case 3:
                     System.out.println("请输入您的用户名：");
                     String name1 = InputUtil.getString();
-
                     System.out.println("请输入需要修改的用户密码：");
                     String password1 = InputUtil.getString();
-                    //将获取到的值存储到对象中
+                    // 将获取到的值存储到对象中
                     VipCard v1 = new VipCard();
                     v1.setName(name1);
                     v1.setPassword(password1);
@@ -51,12 +52,10 @@ public class VipView {
                     }
                     break;
                 case 4:
-                    j = 999;
-                    continue;
+                    return;
                 default:
                     System.out.println("没有该选项，请重新选择！！");
                     break;
-
             }
         }
     }
