@@ -41,8 +41,35 @@ public class VipCardDao {
         return v;
     }
 
-    //�޸�����
-    public int updatePassword(VipCard v) {
+    //dao修改密码
+    public int updatePassword(VipCard v){
+        int i=0;
+        Connection conn=null;
+        PreparedStatement ps=null;
+        try {
+            //1.sql语句
+            String sql="update vipcard set password=? where name=?";
+            //2.数据库连接对象
+            conn=DBConnection.getConnection();
+            //3.预编译对象
+            ps = conn.prepareStatement(sql);
+            //4.赋值
+
+            ps.setString(2,v.getName());
+            ps.setString(1, v.getPassword());
+
+            //5.执行，得到结果
+            i=ps.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally{
+            DBConnection.closeAll(conn, ps, null);
+        }
+        return i;
+    }
+    /*//会员修改密码
+     public int updatePassword(VipCard v) {
         int i = 0;
         Connection conn = null;
         PreparedStatement ps = null;
@@ -69,6 +96,8 @@ public class VipCardDao {
         }
         return i;
     }
+
+     */
 
     public int selectPointsByCard(String card) {
         int i = 0;
@@ -97,7 +126,7 @@ public class VipCardDao {
         }
         return point;
     }
-
+    //积分累计
     public int addPoints(String card, int points) {
         int i = 0;
         Connection conn = null;
@@ -122,6 +151,7 @@ public class VipCardDao {
         }
         return i;
     }
+    //查询所有会员信息
 	public ArrayList<VipCard> selectAllVip(){
 		int i = 0;
 		Connection conn = null;
@@ -154,4 +184,27 @@ public class VipCardDao {
 		}
 		return vipList;
 	}
+
+    //兑换后修改积分
+    public int updatePoint(int point,String card){
+        int i=0;
+        Connection conn=null;
+        PreparedStatement ps =null;
+        try {
+            String sql="update vipcard set Point=? where card=?";
+            //数据库连接
+            conn=DBConnection.getConnection();
+            //预编译
+            ps= conn.prepareStatement(sql);
+            ps.setInt(1, point);
+            ps.setString(2, card);
+            i=ps.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally{
+            DBConnection.closeAll(conn, ps, null);
+        }
+        return i;
+    }
 }
