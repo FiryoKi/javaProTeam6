@@ -99,11 +99,11 @@ public class VipCardDao {
 
      */
 
-    public int selectPointsByCard(String card) {
+    public Integer selectPointsByCard(String card) {
         int i = 0;
         Connection conn = null;
         PreparedStatement ps = null;
-		int point = 0;
+		Integer point = null;
 		try {
             // 1.sql语句
             String sql = "select Point from vipcard where Card=?";

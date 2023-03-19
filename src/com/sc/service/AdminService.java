@@ -39,5 +39,19 @@ public class AdminService {
         }
         return null;
     }
+    /**
+     * 根据卡号查询积分
+     * @param card
+     * @return
+     */
+    public int selectPoints(String card){
+        Integer i=vipCardDao.selectPointsByCard(card);
+        if(i==null){
+            System.out.println("该会员不存在");
+            return -1;
+        }else {
+            return i;
+        }
+    }
 
 }

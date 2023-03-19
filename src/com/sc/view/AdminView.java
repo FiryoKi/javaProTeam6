@@ -104,4 +104,10 @@ public class AdminView {
          */
 
     }
+    public void selectPoints(){
+        System.out.println("请输入要查询的卡号");
+        String card=InputUtil.getString();
+        int points=adminService.selectPoints(card);
+        System.out.println("积分为"+points);
+    }
 }

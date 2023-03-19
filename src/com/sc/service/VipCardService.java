@@ -32,7 +32,7 @@ public class VipCardService {
         }
     }
     //根据卡号查询积分
-    public int  selecPointsByCard(String card){
+    public int  selectPointsByCard(String card){
         int i=vipd.selectPointsByCard(card);
         return i;
     }
