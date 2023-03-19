@@ -14,45 +14,56 @@ import java.util.List;
  */
 public class AdminView {
     AdminService adminService = new AdminService();
-    VipCardService vipCardService = new VipCardService();
+    /**
+    定义一个int变量j用来做返回上一级跳转
+     */
+    int j = 1;
+    public int getJ() {
+        return j;
+    }
+
     public void adminView() {
-        System.out.println("管理界面");
-        System.out.println("请选择：" +
-                "1.注册开卡\t" +
-                "2.修改密码\t" +
-                "3.积分累计\t" +
-                "4.查询剩余积分\t" +
-                "5.查看所有会员信息\t" +
-                "6.管理积分兑换商品\t" +
-                "7.退出");
-        System.out.println("请输入你要操作的选项：");
-        int i = InputUtil.getInt();
-        switch (i) {
-            case 1:
-                break;
-            case 2:
+        while (j==1){
+            System.out.println("管理界面");
+            System.out.println("请选择：" +
+                    "1.注册开卡\t" +
+                    "2.修改密码\t" +
+                    "3.积分累计\t" +
+                    "4.查询剩余积分\t" +
+                    "5.查看所有会员信息\t" +
+                    "6.管理积分兑换商品\t" +
+                    "7.返回上一级");
+            System.out.println("请输入你要操作的选项：");
+            int i = InputUtil.getInt();
+            switch (i) {
+                case 1:
+                    break;
+                case 2:
 
-                break;
-            case 3:
-                addPoints();
-                break;
-            case 4:
+                    break;
+                case 3:
+                    addPoints();
+                    break;
+                case 4:
 
-                break;
-            case 5:
-                selectAllVip();
-                break;
-            case 6:
+                    break;
+                case 5:
+                    selectAllVip();
+                    break;
+                case 6:
+                    ExchangeView exchangeView = new ExchangeView();
+                    exchangeView.AdminExchange();
+                    break;
+                case 7:
+                    j=999;
+                    continue;
+                default:
+                    System.out.println("没有该选项，请重新选择！！");
+                    break;
 
-                break;
-            case 7:
-                System.exit(0);
-                break;
-            default:
-                System.out.println("没有该选项，请重新选择！！");
-                break;
-
+            }
         }
+
     }
 
     /**

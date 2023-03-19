@@ -1,6 +1,7 @@
 package com.sc.view;
 
 import com.sc.po.Admin;
+import com.sc.po.VipCard;
 import com.sc.service.AdminService;
 import com.sc.service.VipCardService;
 import com.sc.util.InputUtil;
@@ -34,13 +35,33 @@ public class LoginView {
         }
         return flag;
     }
-    public boolean VipLogin(){
+    public boolean VipLogin(VipCard vipCard){
         boolean flag1 = false;
-        System.out.println("*****会员登录*****");
-        System.out.println("请输入用户名：");
-        String name = InputUtil.getString();
-        System.out.println("请输入密码：");
-        String password = InputUtil.getString();
+        int count=1;
+        while(count<4){
+            System.out.println("*****会员登录*****");
+            System.out.println("请输入用户名：");
+            String name =  InputUtil.getString();
+            System.out.println("请输入密码：");
+            String password = InputUtil.getString();
+            VipCard v=new VipCard();
+            v.setName(name);
+            v.setPassword(password);
+            vipCard = vipCardService.login(v);
+
+            if(vipCard!=null&&name.equals(vipCard.getName())&&password.equals(vipCard.getPassword())){
+                System.out.println("恭喜"+vipCard.getName()+"登录成功！");
+                flag1 = true;
+                break;
+            }	else{
+                count++;
+                System.out.println("登录失败，请重新登录。剩余次数："+(4-count));
+            }if(count==4) {
+                System.out.println("登录次数用完，系统退出");
+                System.exit(0);
+            }
+        }
         return flag1;
     }
+
 }
