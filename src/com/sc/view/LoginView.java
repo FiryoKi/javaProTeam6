@@ -38,7 +38,7 @@ public class LoginView {
         boolean flag1 = false;
         System.out.println("*****会员登录*****");
         System.out.println("请输入用户名：");
-        String adminname = InputUtil.getString();
+        String name = InputUtil.getString();
         System.out.println("请输入密码：");
         String password = InputUtil.getString();
         return flag1;

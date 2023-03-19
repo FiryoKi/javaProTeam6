@@ -1,9 +1,12 @@
 package com.sc.view;
 
 
+import com.sc.po.VipCard;
 import com.sc.service.AdminService;
+import com.sc.service.VipCardService;
 import com.sc.util.InputUtil;
 
+import java.util.List;
 
 
 /**
@@ -11,7 +14,7 @@ import com.sc.util.InputUtil;
  */
 public class AdminView {
     AdminService adminService = new AdminService();
-
+    VipCardService vipCardService = new VipCardService();
     public void adminView() {
         System.out.println("管理界面");
         System.out.println("请选择：" +
@@ -31,13 +34,13 @@ public class AdminView {
 
                 break;
             case 3:
-
+                addPoints();
                 break;
             case 4:
 
                 break;
             case 5:
-
+                selectAllVip();
                 break;
             case 6:
 
@@ -74,11 +77,20 @@ public class AdminView {
      */
     public void selectAllVip() {
         System.out.println("会员信息：");
-        Boolean i = adminService.allVip();
+        List<VipCard> vc = adminService.allVip();
+        System.out.println("序号  姓名  密码      卡号  积分  开卡日期");
+        for (VipCard v:vc) {
+            System.out.println(v.getCid()+"\t"+v.getName()+"\t"+v.getPassword()+"\t"+v.getCard()
+                    +"\t"+v.getPoint()+"    "+v.getCdate());
+        }
+        /*
+                Boolean i = adminService.allVip();
         if (i) {
             System.out.println("查询成功");
         } else {
             System.out.println("查询失败");
         }
+         */
+
     }
 }

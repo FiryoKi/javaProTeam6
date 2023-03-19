@@ -9,7 +9,6 @@ import java.util.List;
 //超市会员管理系统主界面
 public class MarketView {
 
-
     public static void main(String[] args) {
         System.out.println("欢迎来到超市会员管理系统");
         System.out.println("****请选择：1.管理员登录\t2.会员登录****");
