@@ -3,6 +3,9 @@ package com.sc.service;
 import com.sc.dao.AdminDao;
 import com.sc.dao.VipCardDao;
 import com.sc.po.Admin;
+import com.sc.po.VipCard;
+
+import java.util.List;
 
 
 public class AdminService {
@@ -29,8 +32,12 @@ public class AdminService {
         }
     }
 
-    public void allVip() {
-        System.out.println(vipCardDao.selectAllVip());
+    public List<VipCard> allVip() {
+        List<VipCard> vipCards = vipCardDao.selectAllVip();
+        if(vipCards.size()!=0&&vipCards!=null){
+            return vipCards;
+        }
+        return null;
     }
 
 }

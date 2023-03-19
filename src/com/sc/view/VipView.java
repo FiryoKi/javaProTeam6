@@ -7,7 +7,7 @@ import com.sc.util.InputUtil;
  * 会员登录界面
  */
 public class VipView {
-    public void adminView(){
+    public void VipView(){
         System.out.println("会员界面");
         System.out.println("请选择：" +
                 "1.兑换商品" +

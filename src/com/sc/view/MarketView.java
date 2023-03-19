@@ -1,5 +1,5 @@
 package com.sc.view;
-
+import com.sc.po.Admin;
 import com.sc.po.Good;
 import com.sc.service.GoodService;
 import com.sc.util.InputUtil;
@@ -9,9 +9,28 @@ import java.util.List;
 //超市会员管理系统主界面
 public class MarketView {
 
-
     public static void main(String[] args) {
+        System.out.println("欢迎来到超市会员管理系统");
+        System.out.println("****请选择：1.管理员登录\t2.会员登录****");
+        int op1=InputUtil.getInt();
+        //管理员登录-跳转管理员管理界面AdminView
+        if(op1==1){
+            LoginView loginView = new LoginView();
+            Admin a = new Admin();
+            AdminView adminView = new AdminView();
+            boolean f = loginView.AdminLogin(a);
+            while (f){
+                adminView.adminView();
+            }
 
+        }
+        //会员登录-跳转会员管理页面
+        if (op1==2){
+
+        }
+        /**
+         * 小贾写的兑换部分，等着把它移动到兑换界面
+         */
         System.out.println("请选择：1.查询并兑换可兑换物品\t2.新增可兑换商品\t3.删除可兑换商品\t4.修改可兑换商品\t5.返回主页面");
         System.out.println("请输入你要操作的选项：");
         int i=InputUtil.getInt();

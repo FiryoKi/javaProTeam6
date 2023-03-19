@@ -12,7 +12,7 @@ public class DBConnection {
 
     //1.数据库连接参数
     private static String user = "root";
-    private static String password="jiaruixue1217";
+    private static String password="201003";
     private static String url="jdbc:mysql://127.0.0.1:3306/market_vip?serverTimezone=UTC";
     //2.加载驱动类
     static {

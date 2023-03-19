@@ -110,8 +110,8 @@ public class VipCardDao {
             // 3.预编译
             ps = conn.prepareStatement(sql);
             // 4.赋值
-            ps.setInt(1, points);
-            ps.setString(2, card+selectPointsByCard(card));
+            ps.setInt(1, points+selectPointsByCard(card));
+            ps.setString(2, card);
             // 5.ִ执行
             i = ps.executeUpdate();
         } catch (SQLException e) {
