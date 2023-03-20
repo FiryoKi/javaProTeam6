@@ -18,7 +18,7 @@ public class VipView {
         return j;
     }
 
-    public void vipView(VipCard vipCard) {
+    public void vipView(String card) {
         System.out.println("会员界面");
         while (true) {
             System.out.println("请选择：" +
@@ -34,8 +34,13 @@ public class VipView {
                     exchangeView.vipExchange();
                     break;
                 case 2:
-                    System.out.println("剩余积分为：" + vcs.selectPointsByCard(vipCard.getCard()));
+                    //需要获取到登录对象的卡号
+                    /**
+                     * Q：获取不到登录会员的卡号-----已解决（修改形参为卡号传递）
+                     */
+                    System.out.println("剩余积分为：" + vcs.selectPointsByCard(card));
                     break;
+
                 case 3:
                     System.out.println("请输入您的用户名：");
                     String name1 = InputUtil.getString();

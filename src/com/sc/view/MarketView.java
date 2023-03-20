@@ -10,6 +10,8 @@ import com.sc.util.InputUtil;
 public class MarketView {
 
     public static void main(String[] args) {
+        //用来获取登录会员的卡号
+        String card;
         System.out.println("***欢迎来到超市会员管理系统***");
         while(true){
             System.out.println("****请选择：1.管理员登录\t2.会员登录\t0.退出系统****");
@@ -25,17 +27,20 @@ public class MarketView {
                 }
             }
             //会员登录-跳转会员管理页面
-            if (op1 == 2) {
+            else if (op1 == 2) {
                 LoginView loginView2 = new LoginView();
                 VipView vipView = new VipView();
                 VipCard v = new VipCard();
                 boolean f2 = loginView2.vipLogin(v);
+                //获取登录会员的卡号
+                card = loginView2.card;
                 if(f2){
-                    vipView.vipView(v);
+                    vipView.vipView(card);
                 }
+
             }
-            if(op1==0){
-                System.out.println("退出超市会员管理系统");
+            else if(op1==0){
+                System.out.println("***退出超市会员管理系统***");
                 System.exit(0);
             }
             else {

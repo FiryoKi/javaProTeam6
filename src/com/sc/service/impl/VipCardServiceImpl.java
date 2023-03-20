@@ -51,4 +51,17 @@ public class VipCardServiceImpl implements VipCardService {
         return i;
     }
 
+    /**
+     * 查询卡号
+     * @param card
+     * @return
+     */
+    public VipCard selectCard(String card){
+        VipCard v=vipCardDao.selectCard(card);
+        if(v!=null){
+            return v;
+        }
+        return null;
+    }
+
 }

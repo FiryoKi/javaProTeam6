@@ -31,4 +31,5 @@ public interface VipCardService {
      * @return
      */
     public int  selectPointsByCard(String card);
+    public VipCard selectCard(String card);
 }
