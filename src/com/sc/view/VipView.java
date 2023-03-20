@@ -2,7 +2,7 @@ package com.sc.view;
 
 
 import com.sc.po.VipCard;
-import com.sc.service.VipCardService;
+import com.sc.service.impl.VipCardService;
 import com.sc.util.InputUtil;
 
 /**
@@ -16,7 +16,7 @@ public class VipView {
         return j;
     }
 
-    public void VipView(VipCard vipCard) {
+    public void vipView(VipCard vipCard) {
         System.out.println("会员界面");
         while (true) {
             System.out.println("请选择：" +
@@ -29,7 +29,7 @@ public class VipView {
             switch (i) {
                 case 1:
                     ExchangeView exchangeView = new ExchangeView();
-                    exchangeView.VipExchange();
+                    exchangeView.vipExchange();
                     break;
                 case 2:
                     System.out.println("剩余积分为：" + vcs.selectPointsByCard(vipCard.getCard()));

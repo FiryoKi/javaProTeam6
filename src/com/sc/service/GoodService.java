@@ -5,60 +5,53 @@ import com.sc.po.Good;
 
 import java.util.List;
 
-public class GoodService {
+/**
+ * @author 6组
+ * @className GoodService
+ * @date 2023/3/20/9:23
+ **/
+public interface GoodService {
     GoodDao gd=new GoodDao();
-    //查询
-    public List<Good>selectAll(){
-        List<Good> good=gd.selectAll();
-        if(good.size()!=0&&good!=null) {
-            return good;
-        }else {
-            return null;
-        }
-    }
-    //兑换
-    public Good Exchange(Good good) {
-        Good g=gd.Exchange(good);
-        if(g!=null) {
-            return g;
-        }else {
-            return null;
-        }
-    }
-    //修改兑换商品数量
-    public boolean updateNumber(String GoodName,int Number) {
-        int i= gd.updateNumber(GoodName,Number);
-        if(i>0) {
-            return true;
-        }else {
-            return false;
-        }
-    }
-    //新增
-    public boolean add(Good g) {
-        int i=gd.add(g);
-        if(i>0) {
-            return true;
-        }else {
-            return false;
-        }
-    }
-    //修改
-    public boolean update(Good g) {
-        int i=gd.update(g);
-        if(i>0) {
-            return true;
-        }else {
-            return false;
-        }
-    }
-    //删除
-    public boolean delete(int Gid) {
-        int i=gd.delete(Gid);
-        if(i>0) {
-            return true;
-        }else {
-            return false;
-        }
-    }
+
+    /**
+     * 查询
+     * @return
+     */
+    public List<Good> selectAll();
+
+    /**
+     * 兑换
+     * @param good
+     * @return
+     */
+    public Good exchange(Good good) ;
+
+    /**
+     * 修改兑换商品数量
+     * @param goodName
+     * @param number
+     * @return
+     */
+    public boolean updateNumber(String goodName, int number);
+
+    /**
+     * 新增
+     * @param g
+     * @return
+     */
+    public boolean add(Good g) ;
+
+    /**
+     * 修改
+     * @param g
+     * @return
+     */
+    public boolean update(Good g);
+
+    /**
+     * 删除
+     * @param gid
+     * @return
+     */
+    public boolean delete(int gid);
 }

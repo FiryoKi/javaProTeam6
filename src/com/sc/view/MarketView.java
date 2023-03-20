@@ -1,13 +1,12 @@
 package com.sc.view;
 import com.sc.po.Admin;
-import com.sc.po.Good;
 import com.sc.po.VipCard;
-import com.sc.service.GoodService;
 import com.sc.util.InputUtil;
 
-import java.util.List;
-
-//超市会员管理系统主界面
+/**
+ * 超市会员管理系统主界面
+ * @author 6组
+ */
 public class MarketView {
 
     public static void main(String[] args) {
@@ -32,7 +31,7 @@ public class MarketView {
                 VipCard v = new VipCard();
                 boolean f2 = loginView2.VipLogin(v);
                 if(f2){
-                    vipView.VipView(v);
+                    vipView.vipView(v);
                 }
             }
             if(op1==0){
