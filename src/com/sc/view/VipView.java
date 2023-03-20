@@ -19,7 +19,7 @@ public class VipView {
     }
 
     public void vipView(String card) {
-        System.out.println("会员界面");
+        System.out.println("****会员界面****");
         while (true) {
             System.out.println("请选择：" +
                     "1.兑换商品\t" +
