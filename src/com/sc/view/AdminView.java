@@ -14,6 +14,7 @@ import java.util.List;
  */
 public class AdminView {
     AdminService adminService = new AdminService();
+    VipCardService vcs = new VipCardService();
     /**
     定义一个int变量j用来做返回上一级跳转
      */
@@ -24,11 +25,11 @@ public class AdminView {
 
     public void adminView() {
         while (true){
-            System.out.println("管理界面");
+            System.out.println("****管理界面****");
             System.out.println("请选择：" +
                     "1.注册开卡\t" +
-                    "2.修改密码\t" +
-                    "3.积分累计\t" +
+                    "2.修改会员密码\t" +
+                    "3.会员积分累计\t" +
                     "4.查询剩余积分\t" +
                     "5.查看所有会员信息\t" +
                     "6.管理积分兑换商品\t" +
@@ -37,15 +38,30 @@ public class AdminView {
             int i = InputUtil.getInt();
             switch (i) {
                 case 1:
+
                     break;
                 case 2:
+                    System.out.println("请输入用户名：");
+                    String name1 = InputUtil.getString();
+                    System.out.println("请输入需要修改的用户密码：");
+                    String password1 = InputUtil.getString();
+                    // 将获取到的值存储到对象中
+                    VipCard v1 = new VipCard();
+                    v1.setName(name1);
+                    v1.setPassword(password1);
+                    boolean flag = vcs.updatePassword(v1);
+                    if (flag == true && name1.equals(name1)) {
+                        System.out.println("修改成功！");
 
+                    } else {
+                        System.out.println("修改失败！");
+                    }
                     break;
                 case 3:
                     addPoints();
                     break;
                 case 4:
-
+                    selectPoints();
                     break;
                 case 5:
                     selectAllVip();

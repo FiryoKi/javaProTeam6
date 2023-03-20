@@ -17,35 +17,37 @@ public class ExchangeView {
         System.out.println("请输入你要操作的选项：");
         int i = InputUtil.getInt();
         switch (i) {
-            /**
-             * 兑换有一点问题目前3.19
-             */
             case 1:
                 System.out.println("请输入卡号：");
                 String card = InputUtil.getString();
-                selectAll();
-                System.out.println("请选择你想兑换的物品：");
-                String GoodName = InputUtil.getString();
-                System.out.println("请选择要兑换的数目：");
-                int Number = InputUtil.getInt();
-                VipCard v = new VipCard();
+                VipCard v=new VipCard();
                 v.setCard(card);
-                int points = vs.selectPointsByCard(card);
-                Good g = new Good();
-                g.setGoodName(GoodName);
-                Good good = gs.Exchange(g);
-                if (good != null && GoodName.equals(good.getGoodName()) && good.getNumber() >= Number && points >= good.getNeedPoint()) {
-                    System.out.println("兑换成功！");
-                    Number = good.getNumber() - Number;
+                VipCard vipcard=vs.selectCard(card);
+                if (vipcard!=null&&card.equals(vipcard.getCard())) {
+                    selectAll();
+                    System.out.println("请选择你想兑换的物品名称：");
+                    String GoodName = InputUtil.getString();
+                    System.out.println("请选择要兑换的数目：");
+                    int Number = InputUtil.getInt();
+                    int points = vs.selectPointsByCard(card);
+                    Good g = new Good();
                     g.setGoodName(GoodName);
-                    g.setNumber(Number);
-                    boolean flag = gs.updateNumber(GoodName, Number);
-                    points -= good.getNeedPoint();
-                    v.setPoint(points);
-                    v.setCard(card);
-                    boolean flag1 = vs.updatePoint(points, card);
+                    Good good = gs.Exchange(g);
+                    if (good != null && GoodName.equals(good.getGoodName()) && good.getNumber() >= Number && points >= good.getNeedPoint()) {
+                        System.out.println("兑换成功！");
+                        Number = good.getNumber() - Number;
+                        g.setGoodName(GoodName);
+                        g.setNumber(Number);
+                        boolean flag = gs.updateNumber(GoodName, Number);
+                        points -= good.getNeedPoint();
+                        v.setPoint(points);
+                        v.setCard(card);
+                        boolean flag1 = vs.updatePoint(points, card);
+                    } else {
+                        System.out.println("商品名错误或商品数目少于所需数目或所需积分不足，因此兑换失败");
+                    }
                 } else {
-                    System.out.println("商品名错误或商品数目少于所需数目或所需积分不足，因此兑换失败");
+                    System.out.println("卡号错误！");
                 }
                 break;
             case 2:
@@ -77,29 +79,34 @@ public class ExchangeView {
             case 1:
                 System.out.println("请输入卡号：");
                 String card = InputUtil.getString();
-                selectAll();
-                System.out.println("请选择你想兑换的物品：");
-                String GoodName = InputUtil.getString();
-                System.out.println("请选择要兑换的数目：");
-                int Number = InputUtil.getInt();
-                VipCard v = new VipCard();
+                VipCard v=new VipCard();
                 v.setCard(card);
-                int points = vs.selectPointsByCard(card);
-                Good g = new Good();
-                g.setGoodName(GoodName);
-                Good good = gs.Exchange(g);
-                if (good != null && GoodName.equals(good.getGoodName()) && good.getNumber() >= Number && points >= good.getNeedPoint()) {
-                    System.out.println("兑换成功！");
-                    Number = good.getNumber() - Number;
+                VipCard vipcard=vs.selectCard(card);
+                if (vipcard!=null&&card.equals(vipcard.getCard())) {
+                    selectAll();
+                    System.out.println("请选择你想兑换的物品名称：");
+                    String GoodName = InputUtil.getString();
+                    System.out.println("请选择要兑换的数目：");
+                    int Number = InputUtil.getInt();
+                    int points = vs.selectPointsByCard(card);
+                    Good g = new Good();
                     g.setGoodName(GoodName);
-                    g.setNumber(Number);
-                    boolean flag = gs.updateNumber(GoodName, Number);
-                    points -= good.getNeedPoint();
-                    v.setPoint(points);
-                    v.setCard(card);
-                    boolean flag1 = vs.updatePoint(points, card);
+                    Good good = gs.Exchange(g);
+                    if (good != null && GoodName.equals(good.getGoodName()) && good.getNumber() >= Number && points >= good.getNeedPoint()) {
+                        System.out.println("兑换成功！");
+                        Number = good.getNumber() - Number;
+                        g.setGoodName(GoodName);
+                        g.setNumber(Number);
+                        boolean flag = gs.updateNumber(GoodName, Number);
+                        points -= good.getNeedPoint();
+                        v.setPoint(points);
+                        v.setCard(card);
+                        boolean flag1 = vs.updatePoint(points, card);
+                    } else {
+                        System.out.println("商品名错误或商品数目少于所需数目或所需积分不足，因此兑换失败");
+                    }
                 } else {
-                    System.out.println("商品名错误或商品数目少于所需数目或所需积分不足，因此兑换失败");
+                    System.out.println("卡号错误！");
                 }
                 break;
             case 2:

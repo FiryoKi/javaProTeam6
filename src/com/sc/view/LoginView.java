@@ -14,7 +14,8 @@ public class LoginView {
     AdminService adminService = new AdminService();
     //创建会员逻辑层对象
     VipCardService vipCardService = new VipCardService();
-
+    //用来获取登录会员的卡号
+    public String card;
     public boolean AdminLogin(Admin admin){
         boolean flag = false;
         System.out.println("*****管理员登录*****");
@@ -35,6 +36,9 @@ public class LoginView {
         }
         return flag;
     }
+    //会员登录
+
+
     public boolean VipLogin(VipCard vipCard){
         boolean flag1 = false;
         int count=1;
@@ -48,9 +52,10 @@ public class LoginView {
             v.setName(name);
             v.setPassword(password);
             vipCard = vipCardService.login(v);
-
             if(vipCard!=null&&name.equals(vipCard.getName())&&password.equals(vipCard.getPassword())){
-                System.out.println("恭喜"+vipCard.getName()+"登录成功！");
+                System.out.println("恭喜"+vipCard.getName()+vipCard.getCard()+"登录成功！");
+                //获取卡号
+                setCard(vipCard.getCard());
                 flag1 = true;
                 break;
             }	else{
@@ -61,7 +66,15 @@ public class LoginView {
                 System.exit(0);
             }
         }
+
         return flag1;
     }
 
+    public void setCard(String card) {
+        this.card = card;
+    }
+
+    public String getCard() {
+        return card;
+    }
 }

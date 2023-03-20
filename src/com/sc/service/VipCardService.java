@@ -36,5 +36,12 @@ public class VipCardService {
         int i=vipd.selectPointsByCard(card);
         return i;
     }
-
+    //查询卡号是否与表内一致
+    public VipCard selectCard(String card){
+        VipCard v=vipd.selectCard(card);
+        if(v!=null){
+            return v;
+        }
+        return null;
+    }
 }

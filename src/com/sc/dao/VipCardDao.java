@@ -207,4 +207,40 @@ public class VipCardDao {
         }
         return i;
     }
+    //查询卡号是否与表中一致
+    public VipCard selectCard(String card){
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        //用来存储数据库查询结果的
+        VipCard v=new VipCard();
+        try {
+            //1.sql语句
+            String sql="select * from vipcard where Card=?";
+            //2.预编译sql语句
+            //获取数据库连接对象
+            conn=DBConnection.getConnection();
+            //预编译对象
+            ps=conn.prepareStatement(sql);
+            ps.setString(1,card);
+            //执行并得到结果集
+            rs=ps.executeQuery();
+            // 5.ִ执行
+            while (rs.next()) {
+                v.setCid(rs.getInt(1));
+                v.setName(rs.getString(2));
+                v.setPassword(rs.getString(3));
+                v.setCard(rs.getString(4));
+                v.setPoint(rs.getInt(5));
+                v.setCdate(rs.getString(6));
+                v.setPid(rs.getInt(7));
+            }
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } finally {
+            DBConnection.closeAll(conn, ps, null);
+        }
+        return v;
+    }
 }

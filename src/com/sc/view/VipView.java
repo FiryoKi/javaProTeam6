@@ -10,13 +10,15 @@ import com.sc.util.InputUtil;
  */
 public class VipView {
     VipCardService vcs = new VipCardService();
+    MarketView mc = new MarketView();
+    LoginView loginView2 = new LoginView();
     int j = 1;
 
     public int getJ() {
         return j;
     }
 
-    public void VipView(VipCard vipCard) {
+    public void VipView(String card) {
         System.out.println("会员界面");
         while (true) {
             System.out.println("请选择：" +
@@ -32,12 +34,16 @@ public class VipView {
                     exchangeView.VipExchange();
                     break;
                 case 2:
-                    System.out.println("剩余积分为：" + vcs.selectPointsByCard(vipCard.getCard()));
+                    //需要获取到登录对象的卡号
+                    /**
+                     * Q：获取不到登录会员的卡号-----已解决（修改参数传递卡号）
+                     */
+                    System.out.println("剩余积分为：" + vcs.selectPointsByCard(card));
                     break;
                 case 3:
                     System.out.println("请输入您的用户名：");
                     String name1 = InputUtil.getString();
-                    System.out.println("请输入需要修改的用户密码：");
+                    System.out.println("请输入想要修改成的密码：");
                     String password1 = InputUtil.getString();
                     // 将获取到的值存储到对象中
                     VipCard v1 = new VipCard();
