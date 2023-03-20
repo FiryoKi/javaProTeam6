@@ -2,23 +2,23 @@ package com.sc.view;
 
 
 import com.sc.po.VipCard;
-import com.sc.service.VipCardService;
+
+import com.sc.service.impl.VipCardServiceImpl;
 import com.sc.util.InputUtil;
 
 /**
  * 会员登录界面
+ * @author 6组
  */
 public class VipView {
-    VipCardService vcs = new VipCardService();
-    MarketView mc = new MarketView();
-    LoginView loginView2 = new LoginView();
+    VipCardServiceImpl vcs = new VipCardServiceImpl();
     int j = 1;
 
     public int getJ() {
         return j;
     }
 
-    public void VipView(String card) {
+    public void vipView(VipCard vipCard) {
         System.out.println("会员界面");
         while (true) {
             System.out.println("请选择：" +
@@ -31,19 +31,15 @@ public class VipView {
             switch (i) {
                 case 1:
                     ExchangeView exchangeView = new ExchangeView();
-                    exchangeView.VipExchange();
+                    exchangeView.vipExchange();
                     break;
                 case 2:
-                    //需要获取到登录对象的卡号
-                    /**
-                     * Q：获取不到登录会员的卡号-----已解决（修改参数传递卡号）
-                     */
-                    System.out.println("剩余积分为：" + vcs.selectPointsByCard(card));
+                    System.out.println("剩余积分为：" + vcs.selectPointsByCard(vipCard.getCard()));
                     break;
                 case 3:
                     System.out.println("请输入您的用户名：");
                     String name1 = InputUtil.getString();
-                    System.out.println("请输入想要修改成的密码：");
+                    System.out.println("请输入需要修改的用户密码：");
                     String password1 = InputUtil.getString();
                     // 将获取到的值存储到对象中
                     VipCard v1 = new VipCard();
