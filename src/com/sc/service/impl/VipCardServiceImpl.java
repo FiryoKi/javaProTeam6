@@ -9,10 +9,10 @@ import com.sc.service.VipCardService;
  * @author 6组
  */
 public class VipCardServiceImpl implements VipCardService {
-    VipCardDao vipd=new VipCardDao();
+    VipCardDao vipCardDao =new VipCardDao();
 
     public VipCard login(VipCard vip) {
-        VipCard v=vipd.login(vip);
+        VipCard v= vipCardDao.login(vip);
         if(v!=null) {
             return v;
         }
@@ -25,7 +25,7 @@ public class VipCardServiceImpl implements VipCardService {
      * @return
      */
     public boolean updatePassword(VipCard v){
-        int i=vipd.updatePassword(v);
+        int i= vipCardDao.updatePassword(v);
         if(i>0){
             return true;
         }else{
@@ -36,7 +36,7 @@ public class VipCardServiceImpl implements VipCardService {
      *  修改兑换后的积分
      */
     public boolean updatePoint(int point,String card) {
-        int i= vipd.updatePoint(point, card);
+        int i= vipCardDao.updatePoint(point, card);
         if(i>0) {
             return true;
         }else {
@@ -47,7 +47,7 @@ public class VipCardServiceImpl implements VipCardService {
      * 根据卡号查询积分
      */
     public int  selectPointsByCard(String card){
-        int i=vipd.selectPointsByCard(card);
+        int i= vipCardDao.selectPointsByCard(card);
         return i;
     }
 

@@ -2,7 +2,8 @@ package com.sc.view;
 import com.sc.po.Good;
 import com.sc.po.VipCard;
 import com.sc.service.GoodService;
-import com.sc.service.impl.VipCardService;
+import com.sc.service.impl.GoodServiceImpl;
+import com.sc.service.impl.VipCardServiceImpl;
 import com.sc.util.InputUtil;
 
 import java.util.List;
@@ -14,8 +15,8 @@ import java.util.List;
 
 public class ExchangeView {
 
-    GoodService gs=new GoodService();
-    VipCardService vs=new VipCardService();
+    GoodService gs=new GoodServiceImpl();
+    VipCardServiceImpl vs=new VipCardServiceImpl();
     public void adminExchange(){
         System.out.println("请选择：1.查询并兑换可兑换物品\t2.新增可兑换商品\t3.删除可兑换商品\t4.修改可兑换商品\t5.返回主页面");
         System.out.println("请输入你要操作的选项：");
@@ -36,7 +37,7 @@ public class ExchangeView {
                 int points = vs.selectPointsByCard(card);
                 Good g = new Good();
                 g.setGoodName(goodName);
-                Good good = gs.Exchange(g);
+                Good good = gs.exchange(g);
                 if (good != null && goodName.equals(good.getGoodName()) && good.getNumber() >= number && points >= good.getNeedPoint()) {
                     System.out.println("兑换成功！");
                     number = good.getNumber() - number;
@@ -90,7 +91,7 @@ public class ExchangeView {
                 int points = vs.selectPointsByCard(card);
                 Good g = new Good();
                 g.setGoodName(goodName);
-                Good good = gs.Exchange(g);
+                Good good = gs.exchange(g);
                 if (good != null && goodName.equals(good.getGoodName()) && good.getNumber() >= number && points >= good.getNeedPoint()) {
                     System.out.println("兑换成功！");
                     number = good.getNumber() - number;

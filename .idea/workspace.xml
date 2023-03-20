@@ -4,20 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dd004b15-42d5-4985-a58c-ea09c4df4c2b" name="变更" comment="改动">
-      <change afterPath="$PROJECT_DIR$/src/com/sc/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sc/service/impl/GoodServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/sc/service/impl/VipCardServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sc/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sc/service/GoodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/service/GoodService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sc/service/VipCardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/service/VipCardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sc/util/DateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/util/DateUtil.java" afterDir="false" />
+    <list default="true" id="dd004b15-42d5-4985-a58c-ea09c4df4c2b" name="变更" comment="新增接口和修改为驼峰命名">
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/dao/AdminDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/dao/GoodDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/dao/VipCardDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/po/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/po/Good.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/po/VipCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/service/AdminService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/service/GoodService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/service/VipCardService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/util/DBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/util/DateUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/util/InputUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/view/AdminView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/view/ExchangeView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/view/LoginView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/view/MarketView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/javaProTeam6/com/sc/view/VipView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/sc/service/impl/VipCardServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/service/impl/VipCardServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sc/view/AdminView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/view/AdminView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sc/view/ExchangeView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/view/ExchangeView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/sc/view/LoginView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/view/LoginView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sc/view/MarketView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/view/MarketView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/sc/view/VipView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/sc/view/VipView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +260,7 @@
       <workItem from="1679120812512" duration="1220000" />
       <workItem from="1679203750107" duration="4053000" />
       <workItem from="1679222374154" duration="9747000" />
-      <workItem from="1679272972840" duration="2912000" />
+      <workItem from="1679272972840" duration="3257000" />
     </task>
     <task id="LOCAL-00001" summary="add message..">
       <created>1679019539058</created>
@@ -338,7 +346,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679239409397</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="新增接口和修改为驼峰命名">
+      <created>1679275933778</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679275933778</updated>
+    </task>
+    <task id="LOCAL-00014" summary="新增接口和修改为驼峰命名">
+      <created>1679276020851</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1679276020851</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -401,7 +423,8 @@
     <MESSAGE value="变更" />
     <MESSAGE value="添加会员和管理员界面" />
     <MESSAGE value="改动" />
-    <option name="LAST_COMMIT_MESSAGE" value="改动" />
+    <MESSAGE value="新增接口和修改为驼峰命名" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增接口和修改为驼峰命名" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

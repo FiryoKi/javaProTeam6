@@ -2,7 +2,8 @@ package com.sc.view;
 
 
 import com.sc.po.VipCard;
-import com.sc.service.impl.AdminService;
+
+import com.sc.service.impl.AdminServiceImpl;
 import com.sc.util.InputUtil;
 
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
  * 管理员界面
  */
 public class AdminView {
-    AdminService adminService = new AdminService();
+    AdminServiceImpl adminService = new AdminServiceImpl();
     /**
     定义一个int变量j用来做返回上一级跳转
      */
@@ -51,7 +52,7 @@ public class AdminView {
                     break;
                 case 6:
                     ExchangeView exchangeView = new ExchangeView();
-                    exchangeView.AdminExchange();
+                    exchangeView.adminExchange();
                     break;
                 case 7:
                     return;

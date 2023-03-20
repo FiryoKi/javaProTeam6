@@ -19,7 +19,7 @@ public class MarketView {
                 LoginView loginView1 = new LoginView();
                 Admin a = new Admin();
                 AdminView adminView = new AdminView();
-                boolean f1 = loginView1.AdminLogin(a);
+                boolean f1 = loginView1.adminLogin(a);
                 if(f1) {
                     adminView.adminView();
                 }
@@ -29,7 +29,7 @@ public class MarketView {
                 LoginView loginView2 = new LoginView();
                 VipView vipView = new VipView();
                 VipCard v = new VipCard();
-                boolean f2 = loginView2.VipLogin(v);
+                boolean f2 = loginView2.vipLogin(v);
                 if(f2){
                     vipView.vipView(v);
                 }

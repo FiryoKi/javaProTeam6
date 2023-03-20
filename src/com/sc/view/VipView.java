@@ -2,14 +2,16 @@ package com.sc.view;
 
 
 import com.sc.po.VipCard;
-import com.sc.service.impl.VipCardService;
+
+import com.sc.service.impl.VipCardServiceImpl;
 import com.sc.util.InputUtil;
 
 /**
  * 会员登录界面
+ * @author 6组
  */
 public class VipView {
-    VipCardService vcs = new VipCardService();
+    VipCardServiceImpl vcs = new VipCardServiceImpl();
     int j = 1;
 
     public int getJ() {

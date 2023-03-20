@@ -2,8 +2,8 @@ package com.sc.view;
 
 import com.sc.po.Admin;
 import com.sc.po.VipCard;
-import com.sc.service.impl.AdminService;
-import com.sc.service.impl.VipCardService;
+import com.sc.service.impl.AdminServiceImpl;
+import com.sc.service.impl.VipCardServiceImpl;
 import com.sc.util.InputUtil;
 
 /**
@@ -12,9 +12,10 @@ import com.sc.util.InputUtil;
  */
 public class LoginView {
     //创建管理员逻辑层对象
-    AdminService adminService = new AdminService();
-    // 创建会员逻辑层对象
-    VipCardService vipCardService = new VipCardService();
+
+    AdminServiceImpl adminService = new AdminServiceImpl();
+
+    VipCardServiceImpl vipCardService = new VipCardServiceImpl(); // 创建会员逻辑层对象
 
     public boolean adminLogin(Admin admin){
         boolean flag = false;
@@ -27,7 +28,7 @@ public class LoginView {
         Admin a = new Admin();
         a.setAdmin(adminName);
         a.setPassword(password);
-        admin = adminService.Login(a);
+        admin = adminService.login(a);
         if(a!=null&&adminName.equals(admin.getAdmin())&&password.equals(admin.getPassword())){
             System.out.println("恭喜"+admin.getAdmin()+"登录成功");
             flag = true;
