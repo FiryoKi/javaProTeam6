@@ -17,7 +17,7 @@ public class GoodServiceImpl implements GoodService {
      */
     public List<Good>selectAll(){
         List<Good> good=gd.selectAll();
-        if(good.size()!=0&&good!=null) {
+        if(good!=null&&good.size()!=0) {
             return good;
         }else {
             return null;
