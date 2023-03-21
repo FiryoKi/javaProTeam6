@@ -18,7 +18,7 @@ public class ExchangeView {
     GoodService gs=new GoodServiceImpl();
     VipCardServiceImpl vs=new VipCardServiceImpl();
     public void adminExchange(){
-        System.out.println("请选择：1.查询并兑换可兑换物品\t2.新增可兑换商品\t3.删除可兑换商品\t4.修改可兑换商品\t5.返回主页面");
+        System.out.println("请选择：1.查询并兑换可兑换物品\t2.新增可兑换商品\t3.删除可兑换商品\t4.修改可兑换商品\t5.返回上一级");
         System.out.println("请输入你要操作的选项：");
         int i = InputUtil.getInt();
         switch (i) {
@@ -79,7 +79,7 @@ public class ExchangeView {
 
     }
     public void vipExchange(){
-        System.out.println("***请选择：1.查询并兑换可兑换物品\t2.返回主页面***");
+        System.out.println("***请选择：1.查询并兑换可兑换物品\t2.返回上一级***");
         System.out.println("请输入你要操作的选项：");
         int op = InputUtil.getInt();
         switch (op) {
