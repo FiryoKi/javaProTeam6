@@ -130,8 +130,8 @@ public class ExchangeView {
      */
     public void selectAll() {
         List<Good> good=gs.selectAll();
+        System.out.println("商品编号\t商品名称\t兑换所需积分\t商品数量");
         for(Good g:good) {
-            System.out.println("商品编号\t商品名称\t兑换所需积分\t商品数量");
             System.out.println("  "+g.getGid()+"         "+g.getGoodName()+"        "+g.getNeedPoint()+"           "+g.getNumber());
         }
     }
@@ -159,13 +159,16 @@ public class ExchangeView {
      * 更新物品
      */
     public void update() {
-        System.out.println("请输入要更新的物品名称");
+        System.out.println("请输入要更新的物品编号");
+        int gid=InputUtil.getInt();
+        System.out.println("请输入更新后的物品名称");
         String goodName =InputUtil.getString();
-        System.out.println("请输入要更新的所需兑换积分：");
+        System.out.println("请输入更新后的所需兑换积分：");
         int needPoint =InputUtil.getInt();
-        System.out.println("请输入要更新的物品数量：");
+        System.out.println("请输入更新后的物品数量：");
         int number =InputUtil.getInt();
         Good g=new Good();
+        g.setGid(gid);
         g.setGoodName(goodName);
         g.setNeedPoint(needPoint);
         g.setNumber(number);

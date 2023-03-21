@@ -16,7 +16,12 @@ public interface AdminService {
      * @return
      */
     public Admin login(Admin admin);
-
+    /**
+     * 添加会员卡
+     * @param card 待添加的会员卡
+     * @return true：添加成功，false：添加失败
+     */
+    public boolean addVipCard(VipCard card);
     /**
      * @param card
      * @param points

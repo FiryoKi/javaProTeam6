@@ -20,6 +20,27 @@ public class AdminServiceImpl implements AdminService {
         }
         return null;
     }
+
+    /**
+     * 开卡
+     * @param vipCard
+     * @return
+     */
+    public boolean addVipCard(VipCard vipCard) {
+        int i = vipCardDao.addVipCard(vipCard);
+        if(i>0) {
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    /**
+     * 查询卡号添加积分
+     * @param card
+     * @param points
+     * @return
+     */
     public Boolean addPoints(String card, int points) {
 
         int i = vipCardDao.addPoints(card, points);

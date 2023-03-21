@@ -32,4 +32,7 @@ public interface VipCardService {
      */
     public int  selectPointsByCard(String card);
     public VipCard selectCard(String card);
+
+
+
 }

@@ -41,6 +41,37 @@ public class VipCardDao {
         return v;
     }
 
+    /**
+     * 开卡-添加会员信息
+     * @param vipCard
+     * @return
+     * @throws SQLException
+     */
+    public int addVipCard(VipCard vipCard){
+        int i = 0;
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try {
+            String sql = "INSERT INTO VipCard(name, password, card, cdate) VALUES (?, ?, ?, ?)";
+            conn=DBConnection.getConnection();
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, vipCard.getName());
+            pstmt.setString(2, vipCard.getPassword());
+            pstmt.setString(3, vipCard.getCard());
+            pstmt.setString(4, vipCard.getCdate());
+            i=pstmt.executeUpdate();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }finally {
+            DBConnection.closeAll(conn, pstmt, rs);
+        }
+        return i;
+    }
+
+
+
     //dao修改密码
     public int updatePassword(VipCard v){
         int i=0;

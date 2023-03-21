@@ -5,8 +5,10 @@ import com.sc.po.VipCard;
 
 import com.sc.service.impl.AdminServiceImpl;
 import com.sc.service.impl.VipCardServiceImpl;
+import com.sc.util.DateUtil;
 import com.sc.util.InputUtil;
 
+import java.util.Calendar;
 import java.util.List;
 
 
@@ -39,7 +41,7 @@ public class AdminView {
             int i = InputUtil.getInt();
             switch (i) {
                 case 1:
-
+                    addVipCard();
                     break;
                 case 2:
                     System.out.println("请输入用户名：");
@@ -82,6 +84,34 @@ public class AdminView {
 
     }
 
+    //开卡
+    public void addVipCard() {
+        System.out.println("\n========== 添加会员 ==========");
+        System.out.print("请输入会员姓名：");
+        String name = InputUtil.getString();
+        System.out.print("请输入会员密码：");
+        String password = InputUtil.getString();
+        Calendar now = Calendar.getInstance();
+        /**
+            日期+随机数生成六位卡号
+         */
+        String card;
+        //获取当前日期
+        String day =String.valueOf(now.get(Calendar.DAY_OF_MONTH));
+        //生成四位随机数
+        String random =String.valueOf((int)(Math.random()*(9999-1000+1))+1000);
+        card = day+random;
+        //开卡日期
+        String now1 = DateUtil.dateToString(now.getTime());
+        // 调用服务层的 addVipCard() 方法添加新的会员卡信息
+        VipCard vipCard = new VipCard(name,password,card,now1);
+        boolean success = adminService.addVipCard(vipCard);
+        if (success) {
+            System.out.println("添加新会员成功！");
+        } else {
+            System.out.println("添加新会员失败！");
+        }
+    }
 
 
     /**

@@ -78,4 +78,10 @@ public class VipCard {
         this.cdate = cdate;
         this.pid = pid;
     }
+    public VipCard(String name, String password,String card,String cdate) {
+        this.name = name;
+        this.password = password;
+        this.card = card;
+        this.cdate = cdate;
+    }
 }

@@ -1,6 +1,6 @@
 package com.sc.util;
 
-import java.sql.Date;
+import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -18,7 +18,7 @@ public class DateUtil {
         }
     }
     public static String dateToString(Date date) {
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         return simpleDateFormat.format(date);
     }
 
