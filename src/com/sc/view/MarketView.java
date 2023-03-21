@@ -12,6 +12,8 @@ public class MarketView {
     public static void main(String[] args) {
         //用来获取登录会员的卡号
         String card;
+        //用来获取登录会员姓名
+        String name;
         System.out.println("***欢迎来到超市会员管理系统***");
         while(true){
             System.out.println("****请选择：1.管理员登录\t2.会员登录\t0.退出系统****");
@@ -34,8 +36,9 @@ public class MarketView {
                 boolean f2 = loginView2.vipLogin(v);
                 //获取登录会员的卡号
                 card = loginView2.card;
+                name = loginView2.name;
                 if(f2){
-                    vipView.vipView(card);
+                    vipView.vipView(card,name);
                 }
 
             }

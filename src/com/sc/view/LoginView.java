@@ -19,7 +19,7 @@ public class LoginView {
 
     //用来获取登录会员的卡号
     public String card;
-
+    public String name;
     public boolean adminLogin(Admin admin){
         boolean flag = false;
         System.out.println("*****管理员登录*****");
@@ -46,7 +46,7 @@ public class LoginView {
         while(true){
             System.out.println("*****会员登录*****");
             System.out.println("请输入用户名：");
-            String name =  InputUtil.getString();
+            name =  InputUtil.getString();
             System.out.println("请输入密码：");
             String password = InputUtil.getString();
             VipCard v=new VipCard();
@@ -58,7 +58,8 @@ public class LoginView {
                 System.out.println("恭喜"+vipCard.getName()+"登录成功！");
                 //获取卡号
                 setCard(vipCard.getCard());
-
+                //获取姓名
+                setName(vipCard.getName());
                 flag1 = true;
                 break;
             }	else{
@@ -79,5 +80,11 @@ public class LoginView {
         return card;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 }

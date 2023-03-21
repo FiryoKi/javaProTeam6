@@ -18,7 +18,7 @@ public class VipView {
         return j;
     }
 
-    public void vipView(String card) {
+    public void vipView(String card,String name) {
         System.out.println("****会员界面****");
         while (true) {
             System.out.println("请选择：" +
@@ -48,10 +48,10 @@ public class VipView {
                     String password1 = InputUtil.getString();
                     // 将获取到的值存储到对象中
                     VipCard v1 = new VipCard();
-                    v1.setName(name1);
+                    v1.setName(name);
                     v1.setPassword(password1);
                     boolean flag = vcs.updatePassword(v1);
-                    if (flag == true && name1.equals(name1)) {
+                    if (flag == true && name1.equals(name)) {
                         System.out.println("修改成功！");
 
                     } else {
