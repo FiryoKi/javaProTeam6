@@ -24,7 +24,6 @@ public class ExchangeView {
             int i = InputUtil.getInt();
             switch (i) {
 
-                //兑换有一点问题目前3.19
                 case 1:
                     System.out.println("请输入卡号：");
                     String card = InputUtil.getString();

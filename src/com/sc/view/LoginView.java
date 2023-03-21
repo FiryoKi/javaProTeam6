@@ -1,8 +1,10 @@
 package com.sc.view;
 
+import com.sc.dao.PowerDao;
 import com.sc.po.Admin;
 import com.sc.po.VipCard;
 import com.sc.service.impl.AdminServiceImpl;
+import com.sc.service.impl.PowerServiceImpl;
 import com.sc.service.impl.VipCardServiceImpl;
 import com.sc.util.InputUtil;
 
@@ -16,7 +18,7 @@ public class LoginView {
     AdminServiceImpl adminService = new AdminServiceImpl();
 
     VipCardServiceImpl vipCardService = new VipCardServiceImpl(); // 创建会员逻辑层对象
-
+    PowerServiceImpl powerService = new PowerServiceImpl();
     //用来获取登录会员的卡号
     public String card;
     public String name;
@@ -32,7 +34,7 @@ public class LoginView {
         a.setAdmin(adminName);
         a.setPassword(password);
         admin = adminService.login(a);
-        if(a!=null&&adminName.equals(admin.getAdmin())&&password.equals(admin.getPassword())){
+        if(a!=null&&adminName.equals(admin.getAdmin())&&password.equals(admin.getPassword())&&powerService.selectPower("管理员").getPID()==admin.getPID()){
             System.out.println("恭喜"+admin.getAdmin()+"登录成功");
             flag = true;
         }else {
@@ -54,7 +56,7 @@ public class LoginView {
             v.setPassword(password);
             vipCard = vipCardService.login(v);
 
-            if(vipCard!=null&&name.equals(vipCard.getName())&&password.equals(vipCard.getPassword())){
+            if(vipCard!=null&&name.equals(vipCard.getName())&&password.equals(vipCard.getPassword())&&powerService.selectPower("会员").getPID()==vipCard.getPid()){
                 System.out.println("恭喜"+vipCard.getName()+"登录成功！");
                 //获取卡号
                 setCard(vipCard.getCard());

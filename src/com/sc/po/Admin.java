@@ -4,7 +4,7 @@ public class Admin {
     int Uid;
     String Admin;
     String Password;
-    int PID = 1;
+    int PID;
 
     public int getUid() {
         return Uid;
